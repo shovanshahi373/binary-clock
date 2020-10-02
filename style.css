@@ -1,0 +1,74 @@
+:root {
+  --cell-size: 4vw;
+  --highlight: #373839;
+  --background-color: rgb(13, 11, 19);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-color, rgb(13, 11, 19));
+  margin: 0;
+  height: 100vh;
+  color: var(--highlight);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1em, 1vw, 50px);
+}
+
+.group {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 50%;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 70vw;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  --border: 5;
+  min-height: 80vh;
+}
+
+.cells {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cells .cell {
+  height: var(--cell-size);
+  width: var(--cell-size);
+  min-height: 35px;
+  color: var(--background-color, rgb(13, 11, 19));
+  display: flex;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  min-width: 35px;
+  border: calc(var(--border) * 1px) solid var(--highlight);
+  margin: calc(var(--border) / 2 * -1px) 0;
+}
+
+.hour-group .cell.show {
+  background-color: hsl(0, 50%, 50%);
+}
+.minute-group .cell.show {
+  background-color: hsl(100, 50%, 60%);
+}
+.second-group .cell.show {
+  background-color: hsl(200, 50%, 60%);
+}
